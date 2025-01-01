@@ -1,6 +1,6 @@
 const ROICalculator = {
     defaultInvestment: 50000,
-    roiPercentage: 0.15,
+    roiPercentage: 2.3,
     holdPeriod: '1 year',
     colors: {
         principal: '#3498db',
@@ -49,7 +49,7 @@ function calculateROI(investment) {
     const profit = investment * ROICalculator.roiPercentage;
 
     const resultsElement = document.getElementById('results');
-    resultsElement.textContent = `When I invest $${investment.toLocaleString()} over ${ROICalculator.holdPeriod}, I will earn $${profit.toLocaleString()}.`;
+    resultsElement.innerHTML = `An investment of <span>$${investment.toLocaleString()}</span> will yield <span>$${profit.toLocaleString()}</span> over <span>${ROICalculator.holdPeriod}</span> years.`;
 
     createDonutChart([
         { label: 'Principal', value: investment, color: ROICalculator.colors.principal },

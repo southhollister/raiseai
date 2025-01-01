@@ -1,3 +1,8 @@
+// Determine the base URL dynamically
+const isLocal = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
+const baseURL = isLocal
+    ? 'http://127.0.0.1:5500/raiseai/roi-calculator' // Local Live Server base URL
+    : 'https://raiseai.netlify.app/roi-calculator'; // Production base URL
 
 // Function to dynamically load a CSS file
 function loadCSS(url) {
@@ -50,7 +55,7 @@ function loadHTML(url, targetElementId) {
 async function initROICalculator() {
     try {
         // Load CSS
-        await loadCSS(`https://raiseai.netlify.app/roi-calculator/roi-calculator.css`);
+        await loadCSS(`${baseURL}/roi-calculator.css`);
         console.log('CSS loaded');
 
         // Load D3.js library
@@ -58,11 +63,11 @@ async function initROICalculator() {
         console.log('D3.js loaded');
 
         // Inject HTML into the placeholder
-        await loadHTML(`https://raiseai.netlify.app/roi-calculator/roi-calculator.html`, 'roi-calculator-wrapper');
+        await loadHTML(`${baseURL}/roi-calculator.html`, 'roi-calculator-wrapper');
         console.log('HTML injected');
 
         // Load and initialize the main JavaScript
-        await loadScript(`https://raiseai.netlify.app/roi-calculator/roi-calculator.js`);
+        await loadScript(`${baseURL}/roi-calculator.js`);
         console.log('ROI Calculator initialized');
     } catch (error) {
         console.error(error);
