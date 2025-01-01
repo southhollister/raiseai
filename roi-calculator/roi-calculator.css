@@ -53,6 +53,7 @@
     margin-bottom: 2rem;
     width: 100%;
     max-width: 400px;
+    border: 1px solid #000;
 }
 
 
@@ -113,6 +114,7 @@
     background: white;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid #000;
 }
 
 .roi-legend-item {
