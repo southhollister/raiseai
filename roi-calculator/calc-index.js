@@ -58,11 +58,11 @@ async function initROICalculator() {
         console.log('D3.js loaded');
 
         // Inject HTML into the placeholder
-        await loadHTML(`https://raiseai.netlify.app/roi-calculator/roi-calculator.html?cache-bust=${Date.now()}`, 'roi-calculator-wrapper');
+        await loadHTML(`https://raiseai.netlify.app/roi-calculator/roi-calculator.html`, 'roi-calculator-wrapper');
         console.log('HTML injected');
 
         // Load and initialize the main JavaScript
-        await loadScript(`https://raiseai.netlify.app/roi-calculator/roi-calculator.js?cache-bust=${Date.now()}`);
+        await loadScript(`https://raiseai.netlify.app/roi-calculator/roi-calculator.js`);
         console.log('ROI Calculator initialized');
     } catch (error) {
         console.error(error);
