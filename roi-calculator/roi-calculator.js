@@ -31,6 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(animatedElement);
     }
 
+    console.log("documented loaded");
+            
     const investmentInput = document.getElementById('investment');
     investmentInput.value = ROICalculator.defaultInvestment;
     calculateROI(ROICalculator.defaultInvestment);
