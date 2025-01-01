@@ -25,6 +25,8 @@ const observerCallback = (entries) => {
 
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 
+console.log(document.readyState);
+
 window.addEventListener('load', function () {
     const animatedElement = document.querySelector('[data-animate="true"]');
     if (animatedElement) {
