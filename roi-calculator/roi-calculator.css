@@ -55,6 +55,7 @@
     max-width: 400px;
 }
 
+
 .roi-calculator-input {
     padding: 0.5rem;
     font-size: 1rem;
@@ -62,6 +63,7 @@
     border-radius: 4px;
     margin-right: 1rem;
     width: 200px;
+    margin-top: 5px;
 }
 
 .roi-calculator-button {
@@ -126,7 +128,8 @@
 }
 
 .roi-results-text {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
+    line-height: 2em;
     text-align: center;
     margin-top: 1rem;
     padding: 1rem;
