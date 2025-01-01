@@ -50,7 +50,7 @@ function loadHTML(url, targetElementId) {
 async function initROICalculator() {
     try {
         // Load CSS
-        await loadCSS('https://cdn.jsdelivr.net/gh/<your-username>/<repo-name>/roi-calculator.css');
+        await loadCSS('https://cdn.jsdelivr.net/gh/southhollister/raiseai/roi-calculator/roi-calculator.css');
         console.log('CSS loaded');
 
         // Load D3.js library
@@ -58,11 +58,11 @@ async function initROICalculator() {
         console.log('D3.js loaded');
 
         // Inject HTML into the placeholder
-        await loadHTML('https://cdn.jsdelivr.net/gh/<your-username>/<repo-name>/roi-calculator.html', 'roi-calculator-wrapper');
+        await loadHTML('https://cdn.jsdelivr.net/gh/southhollister/raiseai/roi-calculator/roi-calculator.html', 'roi-calculator-wrapper');
         console.log('HTML injected');
 
         // Load and initialize the main JavaScript
-        await loadScript('https://cdn.jsdelivr.net/gh/<your-username>/<repo-name>/roi-calculator.js');
+        await loadScript('https://cdn.jsdelivr.net/gh/southhollister/raiseai/roi-calculator/roi-calculator.js');
         console.log('ROI Calculator initialized');
     } catch (error) {
         console.error(error);
