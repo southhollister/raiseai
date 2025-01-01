@@ -33,24 +33,22 @@ if (animatedElement) {
 
 console.log("documented loaded");
         
-const investmentInput = document.getElementById('investment');
-investmentInput.value = ROICalculator.defaultInvestment;
 calculateSources();
-// });
 
 
-function calculateROI() {
+function calculateSources() {
     const debtElement = document.getElementById('debt');
     const equityElement = document.getElementById('equity');
     const totalSourcesElement = document.getElementById('total-sources');
-    
+    const totalSources = SourceCalculator.debt + SourceCalculator.equity;
+
     debtElement.querySelector('span').innerHTML = `$${SourceCalculator.debt.toLocaleString()}`;
     equityElement.querySelector('span').innerHTML = `$${SourceCalculator.equity.toLocaleString()}`;
-    totalSourcesElement.querySelector('span').innerHTML = `$${SourceCalculator.totalSourcesElement.toLocaleString()}`;
+    totalSourcesElement.querySelector('span').innerHTML = `$${totalSources.toLocaleString()}`;
 
     createDonutChart([
-        { label: 'Debt', value: SourceCalculator.debt, color: ROICalculator.colors.principal },
-        { label: 'Equity', value: SourceCalculator.equity, color: ROICalculator.colors.profit }
+        { label: 'Debt', value: SourceCalculator.debt, color: SourceCalculator.colors.principal },
+        { label: 'Equity', value: SourceCalculator.equity, color: SourceCalculator.colors.profit }
     ]);
 }
 
