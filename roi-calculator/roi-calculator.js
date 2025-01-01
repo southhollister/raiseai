@@ -25,20 +25,19 @@ const observerCallback = (entries) => {
 
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-console.log(document.readyState);
+// Removing event listener this since this doesn't get added until the document state is complete
+// window.addEventListener('load', function () {
+const animatedElement = document.querySelector('[data-animate="true"]');
+if (animatedElement) {
+    observer.observe(animatedElement);
+}
 
-window.addEventListener('load', function () {
-    const animatedElement = document.querySelector('[data-animate="true"]');
-    if (animatedElement) {
-        observer.observe(animatedElement);
-    }
-
-    console.log("documented loaded");
-            
-    const investmentInput = document.getElementById('investment');
-    investmentInput.value = ROICalculator.defaultInvestment;
-    calculateROI(ROICalculator.defaultInvestment);
-});
+console.log("documented loaded");
+        
+const investmentInput = document.getElementById('investment');
+investmentInput.value = ROICalculator.defaultInvestment;
+calculateROI(ROICalculator.defaultInvestment);
+// });
 
 document.getElementById('roiForm').addEventListener('submit', function (e) {
     e.preventDefault();
