@@ -58,10 +58,6 @@ async function initROICalculator() {
         await loadCSS(`${baseURL}/sources-calculator.css`);
         console.log('CSS loaded');
 
-        // Load D3.js library
-        await loadScript(`https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js`);
-        console.log('D3.js loaded');
-
         // Inject HTML into the placeholder
         await loadHTML(`${baseURL}/sources-calculator.html`, 'sources-calculator-wrapper');
         console.log('HTML injected');
