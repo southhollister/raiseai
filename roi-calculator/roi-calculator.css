@@ -23,7 +23,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around   ;
-    padding: 2rem;
+    /* padding: 2rem; */
     width: 100%;
     box-sizing: border-box;
     opacity: 0;
