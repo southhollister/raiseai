@@ -25,15 +25,7 @@ const observerCallback = (entries) => {
 
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-if (document.readyState === "loading") {
-      console.log("DOMContentLoaded triggered");
-      // Your code here
-} else {
-console.log("DOMContentLoaded already fired");
-// Execute your code directly
-// Your code here
-}
-document.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('load', function () {
     const animatedElement = document.querySelector('[data-animate="true"]');
     if (animatedElement) {
         observer.observe(animatedElement);
