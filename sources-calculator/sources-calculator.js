@@ -26,7 +26,7 @@ const observer = new IntersectionObserver(observerCallback, observerOptions);
 
 // Removing event listener this since this doesn't get added until the document state is complete
 // window.addEventListener('load', function () {
-const animatedElement = document.querySelector('[data-animate="true"]');
+const animatedElement = document.querySelector('#sources-calculator-wrapper[data-animate="true"]');
 if (animatedElement) {
     observer.observe(animatedElement);
 }
