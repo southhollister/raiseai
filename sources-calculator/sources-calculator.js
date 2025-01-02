@@ -1,4 +1,4 @@
-const SourceCalculator = {
+(() => {const SourceCalculator = {
     debt: 700000,
     equity: 300000,
     colors: {
@@ -92,3 +92,4 @@ function createDonutChart(data) {
         };
     });
 }
+})()
