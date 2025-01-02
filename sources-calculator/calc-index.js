@@ -1,3 +1,4 @@
+(() => {
 // Determine the base URL dynamically
 const isLocal = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
 const baseURL = isLocal
@@ -72,3 +73,4 @@ async function initROICalculator() {
 
 // Start the loading process
 initROICalculator();
+})()
