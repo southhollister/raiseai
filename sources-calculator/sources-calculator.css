@@ -21,7 +21,8 @@
 .sources-calculator-wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-around   ;
+    flex-direction: column;
+    justify-content: space-around;
     /* padding: 2rem; */
     width: 100%;
     box-sizing: border-box;
@@ -138,10 +139,9 @@
     border-radius: 8px;
     width: 100%;
     max-width: 600px;
+    display: flex;
 }
 
 .sources-results-text span {
     font-weight: bold;
-    border-bottom: 2px solid #000;
-    padding-bottom: 5px;
 }
