@@ -90,8 +90,8 @@
 
 .sources-chart-container {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
 }
 
 .sources-chart-tooltip {
