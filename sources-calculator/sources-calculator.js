@@ -53,13 +53,13 @@ function calculateSources() {
 }
 
 function createDonutChart(data) {
-    d3.select('#chart').html('');
+    d3.select('.sources-chart-container#chart').html('');
     const width = 400;
     const height = 400;
     const margin = 40;
     const radius = Math.min(width, height) / 2 - margin;
 
-    const svg = d3.select('#chart')
+    const svg = d3.select('.sources-chart-container#chart')
         .append('svg')
         .attr('width', width)
         .attr('height', height)
