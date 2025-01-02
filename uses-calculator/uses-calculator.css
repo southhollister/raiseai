@@ -1,0 +1,174 @@
+/* Configuration Variables */
+:root {
+    --uses-calc-primary: #4CAF50;
+    --uses-calc-primary-hover: #45a049;
+    --uses-calc-acquisition: #3498db;
+    --uses-calc-reno: #2ecc71;
+    --uses-calc-operating: #ff6f6f;
+}
+
+/* Add animation keyframes for slide up and fade in effect */
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.uses-calculator-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    /* padding: 2rem; */
+    width: 100%;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(50px);
+    font-size: 20px;
+}
+
+.uses-calculator-wrapper.animate-in {
+    animation: slideUpFade 1s ease-out forwards;
+}
+
+.uses-calculator-wrapper * {
+    box-sizing: border-box;
+}
+
+.uses-calculator-form {
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#usesForm {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #000;
+}
+
+
+.uses-calculator-input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 1rem;
+    width: 200px;
+    margin-top: 5px;
+}
+
+.uses-calculator-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: var(--uses-calc-primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.uses-calculator-button:hover {
+    background-color: var(--uses-calc-primary-hover);
+}
+
+.uses-chart-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+    /* margin-bottom: 2rem; */
+}
+
+.uses-chart-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.uses-chart-tooltip {
+    position: absolute;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 4px;
+    pointer-events: none;
+    font-size: 14px;
+    z-index: 1000;
+}
+
+.uses-chart-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid #000;
+    font-size: .75em;
+}
+
+.uses-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.uses-legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.uses-results-text {
+    font-size: 1.5rem;
+    line-height: 2em;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    flex-grow: 1;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.uses-results-text > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+}
+
+.uses-results-text > div:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+.uses-results-text > div:nth-last-child(2) {
+    border: none;
+}
+
+.uses-results-text > div:last-child {
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 2px solid #000;
+    font-weight: bold;
+}
+
+.uses-results-text p + p {
+    font-weight: bold;
+}
