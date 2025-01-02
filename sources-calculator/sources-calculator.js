@@ -42,9 +42,9 @@ function calculateSources() {
     const totalSourcesElement = document.getElementById('total-sources');
     const totalSources = SourceCalculator.debt + SourceCalculator.equity;
 
-    debtElement.querySelector('span').innerHTML = `$${SourceCalculator.debt.toLocaleString()}`;
-    equityElement.querySelector('span').innerHTML = `$${SourceCalculator.equity.toLocaleString()}`;
-    totalSourcesElement.querySelector('span').innerHTML = `$${totalSources.toLocaleString()}`;
+    debtElement.querySelectorAll('p')[1].innerHTML = `$${SourceCalculator.debt.toLocaleString()}`;
+    equityElement.querySelectorAll('p')[1].innerHTML = `$${SourceCalculator.equity.toLocaleString()}`;
+    totalSourcesElement.querySelectorAll('p')[1].innerHTML = `$${totalSources.toLocaleString()}`;
 
     createDonutChart([
         { label: 'Debt', value: SourceCalculator.debt, color: SourceCalculator.colors.principal },

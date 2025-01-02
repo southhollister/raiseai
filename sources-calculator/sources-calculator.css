@@ -21,7 +21,7 @@
 .sources-calculator-wrapper {
     display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     /* padding: 2rem; */
     width: 100%;
@@ -87,13 +87,14 @@
     display: flex;
     align-items: center;
     gap: 2rem;
+    flex-direction: column;
     /* margin-bottom: 2rem; */
 }
 
 .sources-chart-container {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
 }
 
 .sources-chart-tooltip {
@@ -116,6 +117,7 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     border: 1px solid #000;
+    font-size: .75em;
 }
 
 .sources-legend-item {
@@ -141,8 +143,31 @@
     width: 100%;
     max-width: 600px;
     display: flex;
+    flex-direction: column;
 }
 
-.sources-results-text span {
+.sources-results-text > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+}
+
+.sources-results-text > div:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+.sources-results-text > div:nth-last-child(2) {
+    border: none;
+}
+
+.sources-results-text > div:last-child {
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 2px solid #000;
+    font-weight: bold;
+}
+
+.sources-results-text p + p {
     font-weight: bold;
 }
