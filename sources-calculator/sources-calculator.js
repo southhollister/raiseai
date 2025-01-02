@@ -54,8 +54,8 @@ function calculateSources() {
 
 function createDonutChart(data) {
     d3.select('.sources-chart-container#chart').html('');
-    const width = 200;
-    const height = 200;
+    const width = 300;
+    const height = 300;
     const margin = 40;
     const radius = Math.min(width, height) / 2 - margin;
 
