@@ -125,9 +125,8 @@ class IncomeChart {
 
         this.buttonElement.addEventListener('click', (e) => {
             e.preventDefault();
-            console.log(e.target.id)
+            console.log(e.target.id);
             window.charts
-            .filter(chart => chart.container.id != e.target.id)
             .forEach(chart => {
                 chart.container.id != e.target.id ? chart.hide() : chart.show();
             });
