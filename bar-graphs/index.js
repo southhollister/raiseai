@@ -134,10 +134,11 @@ class IncomeChart {
             
             // Loop through all charts in window.charts
             window.charts.forEach(chart => {
-                console.log(chart.buttonElement.id);
                 if (buttonId === chart.buttonElement.id) {
+                    console.log("Matched", chart.buttonElement.id);
                     chart.show(); // Show the chart matching the clicked button
                 } else {
+                    console.log("No match", chart.buttonElement.id);
                     chart.hide(); // Hide all other charts
                 }
             });
