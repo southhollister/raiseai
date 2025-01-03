@@ -1,3 +1,9 @@
+// Determine the base URL dynamically
+const isLocal = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
+const baseURL = isLocal
+    ? 'http://127.0.0.1:5500/raiseai/bar-graphs' // Local Live Server base URL
+    : 'https://raiseai.netlify.app/bar-graphs'; // Production base URL
+
 // Class to handle the creation and functionality of an Income Chart
 class IncomeChart {
     /**
@@ -147,6 +153,32 @@ const data2 = [
     { year: 2023, income: 380000 },
     { year: 2024, income: 420000 },
 ];
+
+// Function to dynamically load a CSS file
+function loadCSS(url) {
+    return new Promise((resolve, reject) => {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = url;
+        link.onload = () => resolve();
+        link.onerror = () => reject(new Error(`Failed to load CSS: ${url}`));
+        document.head.appendChild(link);
+    });
+}
+
+async function graphInit() {
+    try {
+        
+        // Load CSS
+        await loadCSS(`${baseURL}/bar-graph-style.css`);
+        console.log('CSS loaded');
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+graphInit();
 
 // Initialize charts with datasets
 // new IncomeChart('incomeChart', data1); // Create the first chart
