@@ -10,8 +10,7 @@ class IncomeChart {
         this.data = data; // Store the data for the chart
         this.tooltip = this.createTooltip(); // Create a tooltip for the chart
         this.active = active || 'false';
-        this.buttonElement = document.getElementById(buttonElement);
-        console.log(buttonElement);
+        this.buttonElement = document.querySelector(buttonElement);
         this.init(); // Initialize the chart setup
     }
 
