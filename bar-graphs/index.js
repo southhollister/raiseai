@@ -40,11 +40,13 @@ class IncomeChart {
     }
 
     hide() {
-        this.container.parentElement.dataset.active, this.buttonElement.dataset.active = 'false'; 
+        this.container.parentElement.setAttribute('data-active', "false");
+        this.buttonElement.dataset.setAttribute('data-active', 'false'); 
     }
-
+    
     show() {
-        this.container.parentElement.dataset.active, this.buttonElement.dataset.active = 'true';
+        this.container.parentElement.setAttribute('data-active', "true");
+        this.buttonElement.dataset.setAttribute('data-active', 'true'); 
     }
 
     /**
