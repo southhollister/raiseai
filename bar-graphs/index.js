@@ -123,7 +123,7 @@ class IncomeChart {
         this.container.setAttribute('active', this.active);
         this.buttonElement.setAttribute('active', this.active);
 
-        this.buttonElement.addEventListener((e) => {
+        this.buttonElement.addEventListener('click', (e) => {
             e.preventDefault();
             window.charts
             .filter(chart => chart.container.id != e.target.id)
