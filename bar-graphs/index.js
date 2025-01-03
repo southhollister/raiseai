@@ -131,9 +131,10 @@ class IncomeChart {
             if (!buttonId) return; // Exit if no valid button ID is found
 
             console.log(buttonId);
-
+            
             // Loop through all charts in window.charts
             window.charts.forEach(chart => {
+                console.log(chart.buttonElement.id);
                 if (buttonId === chart.buttonElement.id) {
                     chart.show(); // Show the chart matching the clicked button
                 } else {
