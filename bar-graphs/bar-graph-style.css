@@ -7,8 +7,16 @@
     padding: 20px 20px 20px 60px;
     position: relative; /* Ensure all child elements are positioned relative to this container */
     overflow: hidden; /* Prevent overflow if elements go beyond bounds */
-    display: flex;
     align-items: flex-end;
+    display: none;
+}
+
+.income-chart-container[data-active="true"] {
+    display: flex;
+}
+
+.income-chart-button[data-active="true"] {
+    background-color: black!important;
 }
 
 /* Chart Area */

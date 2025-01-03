@@ -5,10 +5,12 @@ class IncomeChart {
      * @param {string} elementId - The ID of the container element for the chart
      * @param {Array} data - Array of objects containing year and income
      */
-    constructor(elementId, data) {
+    constructor(elementId, data, active, buttonElement) {
         this.container = document.getElementById(elementId); // Get the chart container element by its ID
         this.data = data; // Store the data for the chart
         this.tooltip = this.createTooltip(); // Create a tooltip for the chart
+        this.active = active || 'false';
+        this.buttonElement = document.getElementById(buttonElement);
         this.init(); // Initialize the chart setup
     }
 
@@ -35,6 +37,14 @@ class IncomeChart {
             minimumFractionDigits: 0,
             maximumFractionDigits: 0,
         }).format(value); // Use Intl API for consistent currency formatting
+    }
+
+    hide() {
+        this.container.dataset.active, this.buttonElement.dataset.active = 'false'; 
+    }
+
+    show() {
+        this.container.dataset.active, this.buttonElement.dataset.active = 'true';
     }
 
     /**
@@ -109,6 +119,9 @@ class IncomeChart {
         // Append the Y-axis and bar container to the chart container
         this.container.appendChild(yAxis);
         this.container.appendChild(barContainer);
+
+        this.container.dataset.active = this.active;
+        this.buttonElement.dataset.active = this.active;
 
         // Set up animations using IntersectionObserver
         const observer = new IntersectionObserver((entries) => {
