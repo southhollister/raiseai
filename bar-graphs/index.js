@@ -125,10 +125,19 @@ class IncomeChart {
 
         this.buttonElement.addEventListener('click', (e) => {
             e.preventDefault();
-            console.log(e.target.id);
-            window.charts
-            .forEach(chart => {
-                chart.container.id != e.target.id ? chart.hide() : chart.show();
+            // Ensure the event targets the correct button
+            const buttonId = e.target.closest('button')?.id; // Use closest to ensure we're getting the button element
+            if (!buttonId) return; // Exit if no valid button ID is found
+
+            console.log(buttonId);
+
+            // Loop through all charts in window.charts
+            window.charts.forEach(chart => {
+                if (buttonId === chart.buttonElement.id) {
+                    chart.show(); // Show the chart matching the clicked button
+                } else {
+                    chart.hide(); // Hide all other charts
+                }
             });
         });
 
