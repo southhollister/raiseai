@@ -41,12 +41,12 @@ class IncomeChart {
 
     hide() {
         this.container.parentElement.setAttribute('data-active', "false");
-        this.buttonElement.dataset.setAttribute('data-active', 'false'); 
+        this.buttonElement.setAttribute('data-active', 'false'); 
     }
     
     show() {
         this.container.parentElement.setAttribute('data-active', "true");
-        this.buttonElement.dataset.setAttribute('data-active', 'true'); 
+        this.buttonElement.setAttribute('data-active', 'true'); 
     }
 
     /**
