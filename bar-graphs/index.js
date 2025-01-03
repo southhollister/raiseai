@@ -1,9 +1,3 @@
-// Determine the base URL dynamically
-const isLocal = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
-const baseURL = isLocal
-    ? 'http://127.0.0.1:5500/raiseai/bar-graphs' // Local Live Server base URL
-    : 'https://raiseai.netlify.app/bar-graphs'; // Production base URL
-
 // Class to handle the creation and functionality of an Income Chart
 class IncomeChart {
     /**
@@ -167,6 +161,12 @@ function loadCSS(url) {
 }
 
 async function graphInit() {
+    // Determine the base URL dynamically
+    const isLocal = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
+    const baseURL = isLocal 
+        ? 'http://127.0.0.1:5500/raiseai/bar-graphs' // Local Live Server base URL
+        : 'https://raiseai.netlify.app/bar-graphs'; // Production base URL
+
     try {
         
         // Load CSS
