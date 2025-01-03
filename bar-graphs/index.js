@@ -120,8 +120,8 @@ class IncomeChart {
         this.container.appendChild(yAxis);
         this.container.appendChild(barContainer);
 
-        this.container.setAttribute(this.active);
-        this.buttonElement.setAttribute(this.active);
+        this.container.setAttribute('active', this.active);
+        this.buttonElement.setAttribute('active', this.active);
 
         this.buttonElement.addEventListener((e) => {
             e.preventDefault();
