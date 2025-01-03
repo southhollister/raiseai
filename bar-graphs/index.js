@@ -120,8 +120,17 @@ class IncomeChart {
         this.container.appendChild(yAxis);
         this.container.appendChild(barContainer);
 
-        this.container.dataset.active = this.active;
-        this.buttonElement.dataset.active = this.active;
+        this.container.setAttribute(this.active);
+        this.buttonElement.setAttribute(this.active);
+
+        this.buttonElement.addEventListener((e) => {
+            e.preventDefault();
+            window.charts
+            .filter(chart => chart.container.id != e.target.id)
+            .forEach(chart => {
+                chart.container.id != e.target.id ? chart.hide() : chart.show();
+            });
+        });
 
         // Set up animations using IntersectionObserver
         const observer = new IntersectionObserver((entries) => {
