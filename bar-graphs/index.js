@@ -149,5 +149,5 @@ const data2 = [
 ];
 
 // Initialize charts with datasets
-new IncomeChart('incomeChart', data1); // Create the first chart
-new IncomeChart('incomeChart2', data2); // Create the first chart
+// new IncomeChart('incomeChart', data1); // Create the first chart
+// new IncomeChart('incomeChart2', data2); // Create the first chart
