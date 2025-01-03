@@ -21,6 +21,7 @@
 
 .uses-calculator-wrapper {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     flex-direction: row;
     justify-content: space-around;
@@ -86,6 +87,7 @@
 
 .uses-chart-section {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 2rem;
     flex-direction: column;
