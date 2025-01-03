@@ -123,7 +123,7 @@ class IncomeChart {
         this.container.parentElement.setAttribute('data-active', this.active);
 
         this.buttonElement.setAttribute('data-active', this.active);
-        this.buttonElement.className = "income-chart-button";
+        this.buttonElement.classList.add("income-chart-button");
         this.buttonElement.addEventListener('click', (e) => {
             e.preventDefault();
             // Ensure the event targets the correct button
