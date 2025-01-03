@@ -17,6 +17,8 @@
 
 .income-chart-button[data-active="true"] {
     background-color: black!important;
+    border-radius: 5px;
+    color: white;
 }
 
 /* Chart Area */
