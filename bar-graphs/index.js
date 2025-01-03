@@ -132,12 +132,12 @@ class IncomeChart {
             const buttonId = e.target.closest('button')?.id; // Use closest to ensure we're getting the button element
             if (!buttonId) return; // Exit if no valid button ID is found
 
-            console.log(buttonId);
+            // console.log(buttonId);
             
             // Loop through all charts in window.charts
             window.charts.forEach(chart => {
                 if (buttonId === chart.buttonElement.id) {
-                    console.log("Matched", chart.buttonElement.id);
+                    // console.log("Matched", chart.buttonElement.id);
                     chart.show(); // Show the chart matching the clicked button
                 } else {
                     console.log("No match", chart.buttonElement.id);
