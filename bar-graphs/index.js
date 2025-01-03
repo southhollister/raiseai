@@ -11,6 +11,7 @@ class IncomeChart {
         this.tooltip = this.createTooltip(); // Create a tooltip for the chart
         this.active = active || 'false';
         this.buttonElement = document.getElementById(buttonElement);
+        console.log(buttonElement);
         this.init(); // Initialize the chart setup
     }
 
