@@ -40,11 +40,11 @@ class IncomeChart {
     }
 
     hide() {
-        this.container.dataset.active, this.buttonElement.dataset.active = 'false'; 
+        this.container.parentElement.dataset.active, this.buttonElement.dataset.active = 'false'; 
     }
 
     show() {
-        this.container.dataset.active, this.buttonElement.dataset.active = 'true';
+        this.container.parentElement.dataset.active, this.buttonElement.dataset.active = 'true';
     }
 
     /**
@@ -120,8 +120,8 @@ class IncomeChart {
         this.container.appendChild(yAxis);
         this.container.appendChild(barContainer);
 
-        this.container.setAttribute('active', this.active);
-        this.buttonElement.setAttribute('active', this.active);
+        this.container.parentElement.setAttribute('data-active', this.active);
+        this.buttonElement.setAttribute('data-active', this.active);
 
         this.buttonElement.addEventListener('click', (e) => {
             e.preventDefault();
