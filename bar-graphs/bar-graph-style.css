@@ -1,0 +1,122 @@
+/* Chart Container Wrapper */
+.income-chart-container {
+    width: 100%; /* Adjust as needed */
+    max-width: 800px; /* Set a maximum size */
+    height: 400px; /* Control the overall height */
+    margin: 20px auto;
+    padding: 20px 20px 20px 60px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative; /* Ensure all child elements are positioned relative to this container */
+    overflow: hidden; /* Prevent overflow if elements go beyond bounds */
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Chart Area */
+.income-chart {
+    position: relative;
+    width: calc(100% - 100px); /* Leave space for Y-axis and padding */
+    height: calc(100% - 60px); /* Leave space for X-axis labels */
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end; /* Align bars to the bottom of the container */
+}
+
+/* Bar Container */
+.income-chart-bar-container {
+    display: flex;
+    align-items: flex-end; /* Align bars to the bottom */
+    justify-content: space-between; /* Space bars evenly */
+    width: 100%;
+    height: 100%; /* Bars should fill the chart area */
+}
+
+/* Bar Group */
+.income-chart-bar-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Individual Bar */
+.income-chart-bar {
+    width: 30px; /* Adjust bar width relative to the chart */
+    background: #3b82f6;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    margin-bottom: 10px; /* Add space between bars and labels */
+    position:absolute;
+    bottom: 30px;
+}
+
+.income-chart-bar.visible {
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+/* Bar Label */
+.income-chart-bar-label {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 5px; /* Adjust spacing between label and bar */
+}
+
+/* Y-Axis */
+.income-chart-y-axis {
+    height: 100%;
+    position: absolute;
+    right: 100%;
+    /* top: 0; */
+    bottom: 40px; /* Leave space for X-axis labels */
+    width: 60px;
+    display: flex;
+    flex-direction: column-reverse; /* Reverse to align labels from bottom to top */
+    justify-content: space-between;
+    margin-right: 10px;
+}
+
+.income-chart-y-label {
+    font-size: 12px;
+    color: #666;
+    text-align: right;
+    padding-right: 5px;
+}
+
+/* Grid Lines */
+.income-grid-line-container {
+    bottom: 40px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.income-chart-grid-line {
+    position: absolute;
+    left: 0; /* Start after the Y-axis */
+    right: 0;
+    height: 1px;
+    background: #eee;
+}
+
+/* Tooltip */
+.income-chart-tooltip {
+    position: absolute;
+    background: #333;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 100;
+}
+
+/* Hover Effects */
+.income-chart-bar:hover {
+    background: #2563eb;
+}
