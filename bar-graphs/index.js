@@ -63,7 +63,7 @@ class IncomeChart {
 
         // Calculate the maximum income to scale the chart
         const maxIncome = Math.max(...this.data.map(d => d.income)); // Get the highest income value
-        const yAxisSteps = 5; // Number of steps on the Y-axis
+        const yAxisSteps = this.data.length; // Number of steps on the Y-axis
         const stepSize = maxIncome / yAxisSteps; // Income range for each step
 
         const gridLineContainer = document.createElement('div');
