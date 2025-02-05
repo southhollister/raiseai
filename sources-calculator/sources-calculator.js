@@ -1,11 +1,4 @@
-(() => {const SourceCalculator = {
-    debt: 700000,
-    equity: 300000,
-    colors: {
-        principal: '#3498db',
-        profit: '#2ecc71'
-    }
-};
+(() => {const SourceCalculator = window.DealPageSettings.charts.fundingSources
 
 const observerOptions = {
     root: null,
