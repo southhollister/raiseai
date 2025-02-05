@@ -70,7 +70,7 @@ class IncomeChart {
         gridLineContainer.className = 'income-grid-line-container';
         this.container.appendChild(gridLineContainer);
 
-        console.log(`Setting up ${this.elementId} chart`, this.container);
+        console.log(`Setting up chart ${this.container}`);
         // Create Y-axis labels and grid lines
         for (let i = 0; i <= yAxisSteps; i++) {
             const value = i * stepSize; // Calculate the value for each step
