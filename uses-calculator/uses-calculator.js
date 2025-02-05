@@ -35,7 +35,7 @@ function calculateUses() {
     const renoElement = document.getElementById('reno');
     const operatingElement = document.getElementById('operating');
     const totalUsesElement = document.getElementById('total-uses');
-    const totalUses = UsesCalculator.acquistion + UsesCalculator.reno + UsesCalculator.operating;
+    const totalUses = UsesCalculator.acquisition + UsesCalculator.reno + UsesCalculator.operating;
 
     acquisitionElement.querySelectorAll('p')[1].innerHTML = `$${UsesCalculator.acquisition.toLocaleString()}`;
     renoElement.querySelectorAll('p')[1].innerHTML = `$${UsesCalculator.reno.toLocaleString()}`;
