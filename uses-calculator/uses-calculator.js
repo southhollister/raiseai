@@ -1,13 +1,4 @@
-(() => {const UsesCalculator = {
-    acquistion: 700000,
-    reno: 150000,
-    operating: 150000,
-    colors: {
-        acquisition: '#3498db',
-        reno: '#2ecc71',
-        operating: '#ff6f6f'
-    }
-};
+(() => {const UsesCalculator = window.DealPageSettings.charts.acquisitionCost;
 
 const observerOptions = {
     root: null,
