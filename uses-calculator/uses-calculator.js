@@ -1,5 +1,6 @@
 (() => {const UsesCalculator = window.DealPageSettings.charts.acquisitionCosts;
 
+    console.log(UsesCalculator)
 const observerOptions = {
     root: null,
     rootMargin: '0px',
