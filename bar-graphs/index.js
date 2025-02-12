@@ -62,7 +62,7 @@ class IncomeChart {
         yAxis.className = 'income-chart-y-axis'; // Add a class for styling
 
         // Calculate the maximum income to scale the chart
-        const trueMax = Math.max(...this.data.map(d => d.income));
+        const trueMax = Math.max(...this.data.map(d => parseFloat(d.income)));
         const maxIncome = trueMax + (trueMax * .1); // Get the highest income value
         const yAxisSteps = this.data.length ; // Number of steps on the Y-axis
         const stepSize = maxIncome / yAxisSteps; // Income range for each step
@@ -94,7 +94,7 @@ class IncomeChart {
 
             const bar = document.createElement('div'); // Create the bar element
             bar.className = 'income-chart-bar'; // Add a class for styling
-            const height = (item.income / maxIncome) * 100; // Calculate the bar height as a percentage
+            const height = (parseFloat(item.income) / maxIncome) * 100; // Calculate the bar height as a percentage
             bar.style.height = `${height}%`; // Set the bar's height
 
             // Add a label below the bar for the year
@@ -105,7 +105,7 @@ class IncomeChart {
             // Add event listeners for tooltips on hover
             bar.addEventListener('mousemove', (e) => {
                 this.tooltip.style.opacity = '1'; // Show the tooltip
-                this.tooltip.textContent = this.formatCurrency(item.income); // Set the tooltip text
+                this.tooltip.textContent = this.formatCurrency(parseFloat(item.income)); // Set the tooltip text
                 this.tooltip.style.left = `${e.pageX + 10}px`; // Position the tooltip near the cursor
                 this.tooltip.style.top = `${e.pageY - 25}px`; // Adjust the vertical position
             });
